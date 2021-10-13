@@ -1,16 +1,42 @@
 import client from "./client/client";
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Posts from './components/posts'
+import NavbarComp from './components/navbar'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [info,setInfo] = useState([])
+  
+
   useEffect(() => {
-    client.getEntries().then(function (entries) {
-      // log the title for all the entries that have it
-      console.log(entries);
-    });
+    client
+      .getEntries()
+      .then((response) => {
+        console.log(response);
+        setInfo(response.items)
+
+      })
+      .catch(console.error);
   }, []);
 
-  return <div>petstagram</div>;
+  return (
+    <div className="App">
+      <header>
+        <div className="wrapper">
+         
+        </div>
+      </header>
+      <main>
+        <div className="wrapper">
+       <NavbarComp />
+      <Posts info={info} />
+        
+
+        </div>
+      </main>
+    </div>
+  );
 }
 
 export default App;
