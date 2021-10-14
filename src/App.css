@@ -24,6 +24,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+body {
+  background-image: url('https://media.discordapp.net/attachments/874986494245367909/897881962419720262/bg.jpg?width=880&height=587');
+  
+  
+}
 
 .App-link {
   color: #61dafb;
@@ -42,7 +47,12 @@ body {
   background-color:lightblue;
 }
 
-img {
+/* img {
   width:auto;
   height: 500px;
 }
+
+.logo {
+  width: auto;
+  height: auto ;
+} */

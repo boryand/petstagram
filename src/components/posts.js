@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Posts = ({ info }) => {
   return (
@@ -6,9 +7,16 @@ const Posts = ({ info }) => {
       {info.map((entry, index) => {
         return (
           <div key={index}>
-            <h1> {entry.fields.petName} </h1>
-           <img src={entry.fields.petPicture.fields.file.url}/>
-         
+            <h1>
+              {" "}
+              <Link to={`/pets/${entry.fields.petName}`}>
+                {" "}
+                {entry.fields.petName}{" "}
+              </Link>
+            </h1>
+            <Link to={`/pets/${entry.fields.petName}`}>
+              <img src={entry.fields.petPicture.fields.file.url} />{" "}
+            </Link>
           </div>
         );
       })}
@@ -17,4 +25,3 @@ const Posts = ({ info }) => {
 };
 
 export default Posts;
-// items[0].fields.petPicture.fields.file.url
