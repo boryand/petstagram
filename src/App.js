@@ -2,6 +2,7 @@ import client from "./client/client";
 import "./App.css";
 import { useEffect, useState } from "react";
 import Posts from "./components/posts";
+import PetList from "./components/petlist";
 
 import PetDetails from "./components/petdetails";
 import { Switch, Route, Link } from "react-router-dom";
@@ -29,10 +30,13 @@ function App() {
         <div className="wrapper">
           <NavbarNew />
           <Switch>
-            <Route path="/home">
+            <Route exact path="/pets">
+              <PetList info={info} />
+            </Route>
+            <Route exact path="/">
               <Posts info={info} />
             </Route>
-            <Route path="/pets">
+            <Route path="/pets/:nameOfPet">
               <PetDetails info={info} />
             </Route>
           </Switch>
