@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-
 }
 
 .App-logo {
@@ -25,9 +24,14 @@
   color: white;
 }
 body {
-  background-image: url('https://media.discordapp.net/attachments/874986494245367909/897881962419720262/bg.jpg?width=880&height=587');
-  
-  
+  background: rgb(164, 223, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(164, 223, 233, 1) 0%,
+    rgba(181, 203, 208, 1) 21%,
+    rgba(154, 150, 218, 1) 61%,
+    rgba(195, 225, 231, 1) 100%
+  );
 }
 
 .App-link {
@@ -43,16 +47,85 @@ body {
   }
 }
 
-body {
-  background-color:lightblue;
-}
-
-/* img {
-  width:auto;
-  height: 500px;
-}
-
 .logo {
   width: auto;
-  height: auto ;
+  height: auto;
+}
+.basic {
+  width: auto;
+  height: 400px;
+}
+
+.text {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+}
+
+/* .petlist {
+  font-family: "Ephesis", cursive;
+  font-size: 3rem;
 } */
+
+.ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.li {
+  margin-left: 20px;
+}
+
+.petlist {
+  font-family: neon;
+  color: #fb4264;
+  font-size: 3rem;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #f40a35;
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #7a86f3, 0 0 3vw #7fc8e6, 0 0 10vw #4d3affb6,
+      0 0 10vw #8b7473, 0 0 0.4vw #fe2828, 0.5vw 0.5vw 0.1vw #806914;
+    color: #fed128;
+  }
+  50% {
+    text-shadow: 0 0 0.5vw #ebe998, 0 0 1.5vw #d58dff, 0 0 5vw #cf55ff,
+      0 0 5vw #800e0b, 0 0 0.2vw #f885fc, 0.5vw 0.5vw 0.1vw #40340a;
+    color: #806914;
+  }
+}
+
+.petdetails {
+  font-family: "Ephesis";
+  font-size: 3rem;
+}
+
+.container1 {
+  display: flex;
+  font-size: 2.5rem;
+}
+
+.ul1 {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 20px;
+}
+
+.li1 {
+  list-style-type: none;
+  line-height: 110px;
+  font-size: 3rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.li1:hover {
+  font-size: 4rem;
+}

@@ -7,7 +7,7 @@ const Posts = ({ info }) => {
       {info.map((entry, index) => {
         return (
           <div key={index}>
-            <h1>
+            <h1 className='petlist'>
               {" "}
               <Link to={`/pets/${entry.fields.petName}`}>
                 {" "}
@@ -15,7 +15,7 @@ const Posts = ({ info }) => {
               </Link>
             </h1>
             <Link to={`/pets/${entry.fields.petName}`}>
-              <img src={entry.fields.petPicture.fields.file.url} />{" "}
+              <img className= 'basic' alt="" src={entry.fields.petPicture.fields.file.url} />{" "}
             </Link>
           </div>
         );

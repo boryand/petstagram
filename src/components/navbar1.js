@@ -4,15 +4,15 @@ import logo from "../assets/logo.png";
 
 const NavbarNew = () => {
   return (
-    <ul>
+    <ul className='ul'>
       <li>
         <img src={logo} />
       </li>
-      <li>
+      <li className = 'li'>
         {" "}
-        <NavLink to="/home">HOME </NavLink>
+        <NavLink to="/">HOME </NavLink>
       </li>
-      <li>
+      <li className='li'>
         {" "}
         <NavLink to="/pets"> PETS </NavLink>{" "}
       </li>
