@@ -52,8 +52,10 @@ body {
   height: auto;
 }
 .basic {
-  width: auto;
   height: 400px;
+  width: 400px;
+  border: 2px solid lemonchiffon;
+  border-radius: 50%;
 }
 
 .text {
@@ -86,6 +88,7 @@ body {
   animation: neon 1s ease infinite;
   -moz-animation: neon 1s ease infinite;
   -webkit-animation: neon 1s ease infinite;
+  text-decoration: none;
 }
 
 @keyframes neon {
@@ -109,7 +112,7 @@ body {
 
 .container1 {
   display: flex;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .ul1 {
@@ -128,4 +131,59 @@ body {
 
 .li1:hover {
   font-size: 4rem;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  text-decoration: none;
+}
+
+.cont2 {
+  border: 3px solid lemonchiffon;
+  margin: 10px;
+  width: 700px;
+}
+
+.cont2:hover {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation-name: example;
+  animation-duration: 0.25s;
+  border-left: 8px solid rgb(198, 164, 241);
+  border-top: 8px solid rgb(198, 164, 241);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.cont1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.petlist1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.petlist2 {
+  width: 650px;
+  border: 3px solid lightgoldenrodyellow;
+  margin-top: 20px;
+  font-size: 2rem;
+  font-style: italic;
 }
