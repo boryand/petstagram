@@ -10,7 +10,21 @@ import NavbarNew from "./components/navbar1";
 
 function App() {
   const [info, setInfo] = useState([]);
+  const [url, setUrl] = useState();
+  const [animalInput, setAnimalInput] = useState("");
+  const [animalSearch, setAnimalSearch] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // const searchTopic = document.querySelector("#search").value;
+    setAnimalSearch(animalInput);
+    setAnimalInput("");
+  };
+
+  const handleChange = (e) => {
+    setAnimalInput(e.target.value);
+  };
+  // console.log(client);
   useEffect(() => {
     client
       .getEntries()
@@ -21,6 +35,20 @@ function App() {
       .catch(console.error);
   }, []);
 
+  const handleClear = () => {
+    setAnimalSearch("");
+  };
+
+  console.log(animalInput);
+
+  const filteredInfo = animalSearch
+    ? info.filter((animal) => {
+        return animal.fields.petName.includes(animalSearch);
+      })
+    : info;
+
+  console.log(filteredInfo);
+
   return (
     <div className="App">
       <header>
@@ -29,15 +57,26 @@ function App() {
       <main>
         <div className="wrapper">
           <NavbarNew />
+          <form onSubmit={handleSubmit}>
+            <input
+              id="search"
+              placeholder="Search for animal ..."
+              onChange={handleChange}
+              value={animalInput}
+            ></input>
+            <button type="submit"> Search</button>
+            <button onClick={handleClear}>clear</button>
+          </form>
+
           <Switch>
             <Route exact path="/pets">
-              <PetList info={info} />
+              <PetList info={filteredInfo} />
             </Route>
             <Route exact path="/">
-              <Posts info={info} />
+              <Posts info={filteredInfo} />
             </Route>
             <Route path="/pets/:nameOfPet">
-              <PetDetails info={info} />
+              <PetDetails info={filteredInfo} />
             </Route>
           </Switch>
         </div>

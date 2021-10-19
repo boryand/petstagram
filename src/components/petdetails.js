@@ -8,18 +8,20 @@ const PetDetails = ({ info }) => {
 
   console.log(info);
   return (
-    <div>
-      <h1 className="petdetails"> {foundPet && foundPet.fields.petName} </h1>
+    <div className="petlist1">
+      <div className="petlist2">
+        <h1 className="petdetails"> {foundPet && foundPet.fields.petName} </h1>
 
-      <img
-        className="basic"
-        src={foundPet && foundPet.fields.petPicture.fields.file.url}
-      />
-      <div className="container1">
-        <p className="text">
-          {foundPet &&
-            foundPet.fields.petDescription.content[0].content[0].value}
-        </p>
+        <img
+          className="basic"
+          src={foundPet && foundPet.fields.petPicture.fields.file.url}
+        />
+        <div className="contasiner1">
+          <p className="text">
+            {foundPet &&
+              foundPet.fields.petDescription.content[0].content[0].value}
+          </p>
+        </div>
       </div>
     </div>
   );
